@@ -1,9 +1,11 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import TabStack from './TabStack';
-import AuthStack from './AuthStack';
 import {useMMKVBoolean, useMMKVString} from 'react-native-mmkv';
 import OnboardingScreen from '../screens/onBoarding/OnBoardingScreen';
+import Register from '../screens/auth/register/Register';
+import Login from '../screens/auth/login/Login';
+import AuthStack from './AuthStack';
 
 function Navigation() {
   const [token, setToken] = useMMKVString('token');
@@ -12,12 +14,14 @@ function Navigation() {
 
   return (
     <NavigationContainer>
-      {!hasSeenOnboarding ? (
-        <OnboardingScreen />
-      ) : token !== '' && token !== null ? (
-        <TabStack />
+      {hasSeenOnboarding ? (
+        token ? (
+          <TabStack />
+        ) : (
+          <AuthStack />
+        )
       ) : (
-        <AuthStack />
+        <OnboardingScreen />
       )}
     </NavigationContainer>
   );

@@ -3,7 +3,6 @@ import React from 'react';
 import HomeStack from './HomeStack';
 import ProfileStack from './ProfileStack';
 import SearchStack from './SearchStack';
-
 import HomeIcon from '../../assets/icons/home.svg'; // Import SVG file
 import SearchIcon from '../../assets/icons/search.svg';
 import ProfileIcon from '../../assets/icons/profile.svg';

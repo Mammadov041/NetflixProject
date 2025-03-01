@@ -6,9 +6,7 @@ const Button = ({onPress, title, className}) => {
     <TouchableOpacity
       className={`bg-[#E50914] rounded-sm text-center self-center ${className}`}
       onPress={onPress}>
-      <Text className="text-white text-lg font-montSerratSemiBold">
-        {title}
-      </Text>
+      <Text className="font-montSerratBold text-white">{title}</Text>
     </TouchableOpacity>
   );
 };

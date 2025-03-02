@@ -4,7 +4,8 @@ buildscript {
         minSdkVersion = 24
         compileSdkVersion = 35
         targetSdkVersion = 34
-        ndkVersion = "27.1.12297006"
+       ndkVersion = "23.1.7779620" // Use the NDK version installed in your Android SDK
+        cmakeVersion = "3.22.1"     // Match the version in the error
         kotlinVersion = "2.0.21"
     }
     repositories {

@@ -12,7 +12,7 @@ const getTrendingMoviesAsync = async () => {
     });
 
     const data = await response.json();
-    console.log(data);
+    console.log(`Trending Movies Response : ${data.content}`);
 
     if (!response.ok) {
       throw new Error(data.message || 'Failed to fetch trending movies');

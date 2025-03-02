@@ -7,9 +7,11 @@ import {
   PanResponder,
   ImageBackground,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native';
 import {useMMKVBoolean} from 'react-native-mmkv';
 import Button from '../../common/Button';
+import {useNavigation} from '@react-navigation/native';
 
 const {width} = Dimensions.get('window');
 
@@ -47,7 +49,7 @@ const OnboardingScreen = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const translateX = useRef(new Animated.Value(0)).current;
   const netflixLogo = require('../../../assets/images/netflixLogo.png');
-
+  const navigation = useNavigation();
   const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
@@ -122,9 +124,13 @@ const OnboardingScreen = () => {
               <Text className="font-montSerrat text-gray-300 text-base text-center mt-2 w-[280px]">
                 {item.description}
               </Text>
-              <Text className="text-white absolute right-7 top-[47px] font-montSerratSemiBold text-[13px]">
-                Help
-              </Text>
+              <TouchableOpacity
+                className="absolute right-7 top-[47px]"
+                onPress={() => navigation.navigate('Help')}>
+                <Text className="text-white  font-montSerratSemiBold text-[13px]">
+                  Help
+                </Text>
+              </TouchableOpacity>
             </View>
           </ImageBackground>
         ))}

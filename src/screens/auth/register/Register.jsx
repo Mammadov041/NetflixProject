@@ -95,7 +95,7 @@ const Register = () => {
             <Text className="font-montSerrat text-gray-500">
               Already have a Netflix account?
             </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
               <Text className="font-montSerrat text-white"> Sign in</Text>
             </TouchableOpacity>
           </View>

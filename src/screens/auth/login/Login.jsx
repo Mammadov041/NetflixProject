@@ -74,7 +74,7 @@ const Login = () => {
             <Text className="font-montSerrat text-gray-500">
               New to Netflix?
             </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
               <Text className="font-montSerrat text-white"> Sign up now</Text>
             </TouchableOpacity>
           </View>
